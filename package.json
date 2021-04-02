@@ -1,6 +1,6 @@
 {
-  "name": "boilerplate-base",
-  "description": "This project is just a template for creation of new projects",
+  "name": "jest-callslike",
+  "description": "A jest assertion that checks calls for count, order and informed parameters, all at once",
   "version": "0.0.0",
   "private": true,
   "author": {
@@ -60,11 +60,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/codibre/boilerplate-base.git"
+    "url": "https://github.com/codibre/jest-callslike.git"
   },
-  "homepage": "https://github.com/codibre/boilerplate-base#readme",
+  "homepage": "https://github.com/codibre/jest-callslike#readme",
   "bugs": {
-    "url": "https://github.com/codibre/boilerplate-base/issues"
+    "url": "https://github.com/codibre/jest-callslike/issues"
   },
   "keywords": [],
   "license": "MIT",
