@@ -1,5 +1,8 @@
 import '../../src';
 
+const obj = {
+	test: 'value',
+};
 describe('index.ts', () => {
 	let spy: Function;
 
@@ -8,6 +11,7 @@ describe('index.ts', () => {
 		spy(1);
 		spy('a');
 		spy(true);
+		spy(obj);
 	});
 
 	it('should throw an error when number of calls does not match', () => {
@@ -26,7 +30,7 @@ describe('index.ts', () => {
 		let thrownError: any;
 
 		try {
-			expect(spy).toHaveCallsLike([1], ['b'], [true]);
+			expect(spy).toHaveCallsLike([1], ['b'], [true], [{ test: 'value' }]);
 		} catch (err) {
 			thrownError = err;
 		}
@@ -38,7 +42,24 @@ describe('index.ts', () => {
 		let thrownError: any;
 
 		try {
-			expect(spy).toHaveCallsLike(['a'], [1], [true]);
+			expect(spy).toHaveCallsLike(['a'], [1], [true], [{ test: 'value' }]);
+		} catch (err) {
+			thrownError = err;
+		}
+
+		expect(thrownError).toBeInstanceOf(Error);
+	});
+
+	it('should throw an error when expect.exact is used and the object is not exact the same', () => {
+		let thrownError: any;
+
+		try {
+			expect(spy).toHaveCallsLike(
+				[1],
+				['a'],
+				[true],
+				[expect.exact({ test: 'value' })],
+			);
 		} catch (err) {
 			thrownError = err;
 		}
@@ -50,7 +71,19 @@ describe('index.ts', () => {
 		let thrownError: any;
 
 		try {
-			expect(spy).toHaveCallsLike([1], ['a'], [true]);
+			expect(spy).toHaveCallsLike([1], ['a'], [true], [{ test: 'value' }]);
+		} catch (err) {
+			thrownError = err;
+		}
+
+		expect(thrownError).toBeUndefined();
+	});
+
+	it('should pass the expectation when everything matches, even using expect.exact', () => {
+		let thrownError: any;
+
+		try {
+			expect(spy).toHaveCallsLike([1], ['a'], [true], [expect.exact(obj)]);
 		} catch (err) {
 			thrownError = err;
 		}

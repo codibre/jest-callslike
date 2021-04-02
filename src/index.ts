@@ -25,10 +25,33 @@ expect.extend({
 	},
 });
 
+class Exact {
+	private sample: unknown;
+	readonly inverse: void;
+	readonly $$typeof: Symbol;
+
+	constructor(sample: unknown) {
+		this.inverse = void 0;
+
+		this.$$typeof = Symbol.for('jest.asymmetricMatcher');
+		this.sample = sample;
+	}
+
+	asymmetricMatch(other: unknown) {
+		return other === this.sample;
+	}
+}
+
+expect.exact = (sample) => new Exact(sample);
+
 declare global {
 	namespace jest {
 		interface Matchers<R> {
 			toHaveCallsLike(...parameters: unknown[][]): R;
+		}
+
+		interface Expect {
+			exact(sample: unknown): any;
 		}
 	}
 }

@@ -37,6 +37,12 @@ If you want to check if the function was never called, use the assertion with no
 expect(spy).toHaveCallsLike();
 ```
 
+jest-callslike also adds a new custom matcher **expect.exact**. This matcher only passes when the value compared to it is exact the same used, ie, the same reference:
+
+```ts
+expect(spy).toHaveCallsLike(expect.exact(myObject));
+```
+
 ## License
 
 Licensed under [MIT](https://en.wikipedia.org/wiki/MIT_License).
