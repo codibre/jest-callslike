@@ -1,7 +1,7 @@
 {
   "name": "jest-callslike",
   "description": "A jest assertion that checks calls for count, order and informed parameters, all at once",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "Thiago O Santos <tos.oliveira@gmail.com>"
   },
@@ -65,7 +65,12 @@
   "bugs": {
     "url": "https://github.com/codibre/jest-callslike/issues"
   },
-  "keywords": ["jest", "assertion", "call", "matcher"],
+  "keywords": [
+    "jest",
+    "assertion",
+    "call",
+    "matcher"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@codibre/confs": "1.0.1",
