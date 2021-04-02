@@ -65,7 +65,7 @@
   "bugs": {
     "url": "https://github.com/codibre/jest-callslike/issues"
   },
-  "keywords": [],
+  "keywords": ["jest", "assertion", "call", "matcher"],
   "license": "MIT",
   "devDependencies": {
     "@codibre/confs": "1.0.1",
