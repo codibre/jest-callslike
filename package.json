@@ -1,7 +1,7 @@
 {
   "name": "jest-callslike",
   "description": "A jest assertion that checks calls for count, order and informed parameters, all at once",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": {
     "name": "Thiago O Santos <tos.oliveira@gmail.com>"
   },
