@@ -1,3 +1,10 @@
+## [0.2.2](https://github.com/codibre/jest-callslike/compare/v0.2.1...v0.2.2) (2025-11-17)
+
+
+### Bug Fixes
+
+* fixing jest compatibility ([ccfae26](https://github.com/codibre/jest-callslike/commit/ccfae26ca74a329035e58cf2da8b983753a9fb22))
+
 ## [0.2.1](https://github.com/codibre/jest-callslike/compare/v0.2.0...v0.2.1) (2022-08-11)
 
 
