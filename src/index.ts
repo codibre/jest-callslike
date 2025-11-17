@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 expect.extend({
 	toHaveCallsLike(spy: unknown, ...parameters: unknown[][]) {
-		const errors: string[] = [];
+		const errors: unknown[] = [];
 		try {
-			expect(spy).toBeCalledTimes(parameters.length);
+			expect(spy).toHaveBeenCalledTimes(parameters.length);
 		} catch (err) {
 			errors.push(err);
 		}
@@ -10,7 +11,9 @@ expect.extend({
 			try {
 				expect(spy).toHaveBeenNthCalledWith(i + 1, ...params);
 			} catch (err) {
-				errors.push(err.message.replace(/\n+Number of calls: .+$/, '\n'));
+				errors.push(
+					(err as Error).message.replace(/\n+Number of calls: .+$/, '\n'),
+				);
 			}
 		});
 		const pass = errors.length === 0;

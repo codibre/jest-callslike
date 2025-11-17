@@ -16,9 +16,9 @@ export function getNames<T extends object>(c: { prototype: T }): T {
 	});
 }
 
-export function expectCallsLike(spy: any, ...parameters: unknown[][]) {
-	expect(spy).toBeCalledTimes(parameters.length);
-	parameters.forEach((params, i) => {
+export function expectCallsLike(spy: any, ...params: unknown[][]) {
+	expect(spy).toHaveBeenCalledTimes(params.length);
+	params.forEach((params, i) => {
 		expect(spy).toHaveBeenNthCalledWith(i + 1, ...params);
 	});
 }
