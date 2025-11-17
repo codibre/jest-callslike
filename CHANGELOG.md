@@ -1,3 +1,10 @@
+## [0.2.3](https://github.com/codibre/jest-callslike/compare/v0.2.2...v0.2.3) (2025-11-17)
+
+
+### Bug Fixes
+
+* updating engine requirement ([8a1e116](https://github.com/codibre/jest-callslike/commit/8a1e116327c6fd085865d2826e363919f25094b1))
+
 ## [0.2.2](https://github.com/codibre/jest-callslike/compare/v0.2.1...v0.2.2) (2025-11-17)
 
 
